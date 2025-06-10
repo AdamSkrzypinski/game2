@@ -1,0 +1,399 @@
+@import "./colors";
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	
+}
+
+// * {
+// 	border: 1px solid red;
+// }
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Press Start 2P";
+	// font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	height: 100vh;
+	max-width: 1200px;
+}
+
+// HEADER
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 15%;
+	width: 100%;
+	background-color: $primary-color;
+	transition: transform 0.5s 0.7s;
+
+	.title {
+		font-size: 2.7rem;
+		color: $text-color;
+		text-shadow: 0.2rem 0.2rem 0.2rem red;
+		transition: transform 0.5s 0.7s;
+	}
+
+	h1 {
+		overflow: hidden;
+		white-space: nowrap;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+
+		animation: typing 1.5s steps(9, end);
+	}
+
+	@keyframes typing {
+		from {
+			width: 0;
+		}
+		to {
+			width: 25.6rem;
+		}
+	}
+
+	.blink-cursor {
+		opacity: 1;
+		animation: blinking 0.6s linear infinite;
+	}
+
+	@keyframes blinking {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+}
+
+.header-game-active {
+	transform: scaleY(40%) translateY(-75%);
+
+	.title {
+		transform: scaleY(200%);
+	}
+
+	h1 {
+		animation: none;
+	}
+	.blink-cursor {
+		animation: none;
+	}
+}
+
+// MAIN
+
+main {
+	display: flex;
+	position: relative;
+	height: 80%;
+	width: 100%;
+
+	.starting-board {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		background-color: $secondary-color;
+		clip-path: inset(0 0 0 0);
+		transition: clip-path 1s steps(15, end);
+		z-index: 2;
+
+		.start-btn {
+			padding: 1.5rem 3rem;
+			font-family: "Press Start 2P";
+			text-transform: uppercase;
+			font-size: 2.5rem;
+			letter-spacing: 0.1rem;
+			text-align: center;
+			color: $button-txt-color;
+			text-shadow: 0.2rem 0.2rem 0.2rem red;
+			background-color: $button--bgc-color;
+			border: none;
+			box-shadow: 0.2rem 0.2rem 0.2rem red;
+			cursor: pointer;
+			transition: background-color 0.1s, box-shadow 0.1s;
+
+			&:hover {
+				background-color: #eb0291;
+
+				box-shadow: 0.4rem 0.4rem 0.4rem red;
+			}
+		}
+	}
+
+	.game-start-animation {
+		clip-path: inset(0 0 100% 0);
+		z-index: 1;
+	}
+
+	.game-active {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		width: 100%;
+		height: 112%;
+		transform: translateY(-10.5%);
+		z-index: -2;
+		.game-section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 80%;
+			background-color: #67b8ee;
+			font-family: "Roboto", sans-serif;
+
+			.game-card {
+				display: none;
+				position: relative;
+				margin: 0.8rem;
+				height: 22%;
+				width: 14%;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			.card-reverse,
+			.card-obverse {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				pointer-events: none;
+				transition: transform 0.5s, opacity 0.5s;
+			}
+			.card-reverse {
+				font-size: 7rem;
+				text-shadow: 0.1rem 0.1rem 0.1rem red;
+				box-shadow: 0.1rem 0.1rem 0.4rem red;
+				background-color: $secondary-color;
+				z-index: 2;
+
+			}
+
+			.card-obverse {
+				background-color: #fde893;
+				box-shadow: -0.1rem 0.1rem 0.4rem red;
+				opacity: 0;
+
+				i {
+					position: absolute;
+					font-size: 5rem;
+				}
+			}
+			.selected-reverse {
+				transform: rotateY(180deg);
+				opacity: 0;
+
+
+			}
+
+			.selected-obverse {
+				transform: rotateY(-180deg);
+				opacity: 1;
+
+
+			}
+
+			.card-match {
+				animation: match 1s 0.5s steps(12) forwards;
+				pointer-events: none;
+			}
+
+			@keyframes match {
+				0% {
+					opacity: 1;
+				}
+
+				20% {
+					opacity: 0;
+				}
+				40% {
+					opacity: 1;
+				}
+				60% {
+					opacity: 0;
+				}
+				80% {
+					opacity: 1;
+				}
+
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.game-pause, .game-quit{
+				display: flex;
+				position: absolute;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				width: 100%;
+				height: 80%;
+				background-color: $text-color;
+				z-index: -8;
+
+				.btn-resume, .btn-yes, .btn-no {
+					padding: 1.4rem 2.8rem;
+					font-family: "Press Start 2P";
+					text-transform: uppercase;
+					font-size: 2rem;
+					letter-spacing: 0.1rem;
+					text-align: center;
+					color: $button-txt-color;
+					text-shadow: 0.2rem 0.2rem 0.2rem red;
+					background-color: $button--bgc-color;
+					border: none;
+					box-shadow: 0.2rem 0.2rem 0.2rem red;
+					cursor: pointer;
+					transition: background-color 0.1s, box-shadow 0.1s;
+		
+					&:hover {
+						background-color: #eb0291;
+		
+						box-shadow: 0.4rem 0.4rem 0.4rem red;
+					}
+				}
+
+				p{
+					font-family: "Press Start 2P";
+					text-transform: uppercase;
+					font-size: 2.9rem;
+					letter-spacing: 0.1rem;
+					color: $primary-color;
+					text-shadow: 0.1rem 0.1rem 0.2rem red;
+
+				}
+
+				.btn-section{
+					display: flex;
+					justify-content: space-evenly;
+					width: 100%;
+					margin-top: 2rem;
+				}
+			}
+
+		}
+
+
+		.status-section {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 20%;
+			transform: translateY(-1%);
+			background-color: #67b8ee;
+
+			.game-status-section,
+			.buttons-section,
+			.time-section,
+			.moves-section, .progress-section {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
+
+			.game-status-section {
+				height: 55%;
+				justify-content: space-evenly;
+			}
+
+			.time-section,
+			.moves-section, .progress-section {
+				flex-direction: column;
+				height: 75%;
+				width: 30%;
+				background-color: $primary-color;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+				letter-spacing: 0.2rem;
+				color: $text-color;
+				box-shadow: 0.1rem 0.1rem 0.4rem red;
+				text-shadow: 0.1rem 0.2rem 0.2rem red;
+				border-radius: 6px;
+
+				.time,
+				.moves, .progress {
+					margin-bottom: 0.8rem;
+				}
+
+				.time-counter, .moves-counter, .progress-counter {
+					font-size: 2.0rem;
+				}
+			}
+
+			.buttons-section {
+				justify-content: space-evenly;
+				height: 45%;
+
+				.btn-pause, .btn-quit {
+					padding: 1.4rem 2.8rem;
+					font-family: "Press Start 2P";
+					text-transform: uppercase;
+					font-size: 2rem;
+					letter-spacing: 0.1rem;
+					text-align: center;
+					color: $button-txt-color;
+					text-shadow: 0.2rem 0.2rem 0.2rem red;
+					background-color: $button--bgc-color;
+					border: none;
+					box-shadow: 0.2rem 0.2rem 0.2rem red;
+					cursor: pointer;
+					transition: background-color 0.1s, box-shadow 0.1s;
+		
+					&:hover {
+						background-color: #eb0291;
+		
+						box-shadow: 0.4rem 0.4rem 0.4rem red;
+					}
+				}
+
+			}
+		}
+	}
+
+
+}
+
+// FOOTER
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 5%;
+	background-color: $primary-color;
+
+	.footer-text {
+		text-align: center;
+		color: $text-color;
+		font-size: 1.5rem;
+		text-shadow: 0.1rem 0.1rem 0.1rem red;
+	}
+}
+
+@import "./_small.scss";
+@import "./_medium.scss";
+@import "./_large.scss";

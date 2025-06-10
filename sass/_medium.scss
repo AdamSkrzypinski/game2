@@ -1,0 +1,45 @@
+@media (min-width: 768px) {
+	// HEADER
+
+	header {
+		.title {
+			font-size: 3.4rem;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+			to {
+				width: 31.5rem;
+			}
+		}
+	}
+
+	// MAIN
+
+	main {
+		.starting-board {
+			.start-btn {
+				font-size: 3.4rem;
+			}
+		}
+
+		.game-active {
+			.game-section {
+				.game-card {
+					height: 22%;
+					width: 10%;
+				}
+			}
+		}
+	}
+
+	// FOOTER
+
+	footer {
+		.footer-text {
+			font-size: 2rem;
+		}
+	}
+}

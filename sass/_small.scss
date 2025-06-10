@@ -1,0 +1,33 @@
+@media (max-width: 600px) {
+	main {
+		.game-active {
+			.status-section {
+				.time-section,
+				.moves-section,
+				.progress-section {
+					font-size: 1.5rem;
+
+					.time-counter,
+					.moves-counter,
+					.progress-counter {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+
+		.game-active {
+			.game-section {
+				.game-card {
+					width: 16%;
+
+					.card-obverse {
+						i {
+							font-size: 4rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+@media (min-width: 768px) {
+  header .title {
+    font-size: 3.4rem;
+  }
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 31.5rem;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 31.5rem;
+    }
+  }
+}
+/*# sourceMappingURL=medium.css.map */

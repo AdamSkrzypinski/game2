@@ -1,0 +1,570 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Press Start 2P";
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  max-width: 1200px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15%;
+  width: 100%;
+  background-color: #590696;
+  -webkit-transition: -webkit-transform 0.5s 0.7s;
+  transition: -webkit-transform 0.5s 0.7s;
+  transition: transform 0.5s 0.7s;
+  transition: transform 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+}
+header .title {
+  font-size: 2.7rem;
+  color: #37e2d5;
+  text-shadow: 0.2rem 0.2rem 0.2rem red;
+  -webkit-transition: -webkit-transform 0.5s 0.7s;
+  transition: -webkit-transform 0.5s 0.7s;
+  transition: transform 0.5s 0.7s;
+  transition: transform 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+}
+header h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  -webkit-animation: typing 1.5s steps(9, end);
+          animation: typing 1.5s steps(9, end);
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25.6rem;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25.6rem;
+  }
+}
+header .blink-cursor {
+  opacity: 1;
+  -webkit-animation: blinking 0.6s linear infinite;
+          animation: blinking 0.6s linear infinite;
+}
+@-webkit-keyframes blinking {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes blinking {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.header-game-active {
+  -webkit-transform: scaleY(40%) translateY(-75%);
+          transform: scaleY(40%) translateY(-75%);
+}
+.header-game-active .title {
+  -webkit-transform: scaleY(200%);
+          transform: scaleY(200%);
+}
+.header-game-active h1 {
+  -webkit-animation: none;
+          animation: none;
+}
+.header-game-active .blink-cursor {
+  -webkit-animation: none;
+          animation: none;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 80%;
+  width: 100%;
+}
+main .starting-board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #8a06e9;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+  -webkit-transition: -webkit-clip-path 1s steps(15, end);
+  transition: -webkit-clip-path 1s steps(15, end);
+  transition: clip-path 1s steps(15, end);
+  transition: clip-path 1s steps(15, end), -webkit-clip-path 1s steps(15, end);
+  z-index: 2;
+}
+main .starting-board .start-btn {
+  padding: 1.5rem 3rem;
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: #fbcb0a;
+  text-shadow: 0.2rem 0.2rem 0.2rem red;
+  background-color: #c70a80;
+  border: none;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem red;
+          box-shadow: 0.2rem 0.2rem 0.2rem red;
+  cursor: pointer;
+  -webkit-transition: background-color 0.1s, -webkit-box-shadow 0.1s;
+  transition: background-color 0.1s, -webkit-box-shadow 0.1s;
+  transition: background-color 0.1s, box-shadow 0.1s;
+  transition: background-color 0.1s, box-shadow 0.1s, -webkit-box-shadow 0.1s;
+}
+main .starting-board .start-btn:hover {
+  background-color: #eb0291;
+  -webkit-box-shadow: 0.4rem 0.4rem 0.4rem red;
+          box-shadow: 0.4rem 0.4rem 0.4rem red;
+}
+main .game-start-animation {
+  -webkit-clip-path: inset(0 0 100% 0);
+          clip-path: inset(0 0 100% 0);
+  z-index: 1;
+}
+main .game-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 112%;
+  -webkit-transform: translateY(-10.5%);
+          transform: translateY(-10.5%);
+  z-index: -2;
+}
+main .game-active .game-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 80%;
+  background-color: #67b8ee;
+  font-family: "Roboto", sans-serif;
+}
+main .game-active .game-section .game-card {
+  display: none;
+  position: relative;
+  margin: 0.8rem;
+  height: 22%;
+  width: 14%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+main .game-active .game-section .card-reverse,
+main .game-active .game-section .card-obverse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+main .game-active .game-section .card-reverse {
+  font-size: 7rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem red;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem red;
+          box-shadow: 0.1rem 0.1rem 0.4rem red;
+  background-color: #8a06e9;
+  z-index: 2;
+}
+main .game-active .game-section .card-obverse {
+  background-color: #fde893;
+  -webkit-box-shadow: -0.1rem 0.1rem 0.4rem red;
+          box-shadow: -0.1rem 0.1rem 0.4rem red;
+  opacity: 0;
+}
+main .game-active .game-section .card-obverse i {
+  position: absolute;
+  font-size: 5rem;
+}
+main .game-active .game-section .selected-reverse {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  opacity: 0;
+}
+main .game-active .game-section .selected-obverse {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  opacity: 1;
+}
+main .game-active .game-section .card-match {
+  -webkit-animation: match 1s 0.5s steps(12) forwards;
+          animation: match 1s 0.5s steps(12) forwards;
+  pointer-events: none;
+}
+@-webkit-keyframes match {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes match {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+main .game-active .game-section .game-pause, main .game-active .game-section .game-quit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 80%;
+  background-color: #37e2d5;
+  z-index: -8;
+}
+main .game-active .game-section .game-pause .btn-resume, main .game-active .game-section .game-pause .btn-yes, main .game-active .game-section .game-pause .btn-no, main .game-active .game-section .game-quit .btn-resume, main .game-active .game-section .game-quit .btn-yes, main .game-active .game-section .game-quit .btn-no {
+  padding: 1.4rem 2.8rem;
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: #fbcb0a;
+  text-shadow: 0.2rem 0.2rem 0.2rem red;
+  background-color: #c70a80;
+  border: none;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem red;
+          box-shadow: 0.2rem 0.2rem 0.2rem red;
+  cursor: pointer;
+  -webkit-transition: background-color 0.1s, -webkit-box-shadow 0.1s;
+  transition: background-color 0.1s, -webkit-box-shadow 0.1s;
+  transition: background-color 0.1s, box-shadow 0.1s;
+  transition: background-color 0.1s, box-shadow 0.1s, -webkit-box-shadow 0.1s;
+}
+main .game-active .game-section .game-pause .btn-resume:hover, main .game-active .game-section .game-pause .btn-yes:hover, main .game-active .game-section .game-pause .btn-no:hover, main .game-active .game-section .game-quit .btn-resume:hover, main .game-active .game-section .game-quit .btn-yes:hover, main .game-active .game-section .game-quit .btn-no:hover {
+  background-color: #eb0291;
+  -webkit-box-shadow: 0.4rem 0.4rem 0.4rem red;
+          box-shadow: 0.4rem 0.4rem 0.4rem red;
+}
+main .game-active .game-section .game-pause p, main .game-active .game-section .game-quit p {
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  font-size: 2.9rem;
+  letter-spacing: 0.1rem;
+  color: #590696;
+  text-shadow: 0.1rem 0.1rem 0.2rem red;
+}
+main .game-active .game-section .game-pause .btn-section, main .game-active .game-section .game-quit .btn-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  margin-top: 2rem;
+}
+main .game-active .status-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 20%;
+  -webkit-transform: translateY(-1%);
+          transform: translateY(-1%);
+  background-color: #67b8ee;
+}
+main .game-active .status-section .game-status-section,
+main .game-active .status-section .buttons-section,
+main .game-active .status-section .time-section,
+main .game-active .status-section .moves-section, main .game-active .status-section .progress-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+main .game-active .status-section .game-status-section {
+  height: 55%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+main .game-active .status-section .time-section,
+main .game-active .status-section .moves-section, main .game-active .status-section .progress-section {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 75%;
+  width: 30%;
+  background-color: #590696;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #37e2d5;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem red;
+          box-shadow: 0.1rem 0.1rem 0.4rem red;
+  text-shadow: 0.1rem 0.2rem 0.2rem red;
+  border-radius: 6px;
+}
+main .game-active .status-section .time-section .time,
+main .game-active .status-section .time-section .moves, main .game-active .status-section .time-section .progress,
+main .game-active .status-section .moves-section .time,
+main .game-active .status-section .moves-section .moves,
+main .game-active .status-section .moves-section .progress, main .game-active .status-section .progress-section .time,
+main .game-active .status-section .progress-section .moves, main .game-active .status-section .progress-section .progress {
+  margin-bottom: 0.8rem;
+}
+main .game-active .status-section .time-section .time-counter, main .game-active .status-section .time-section .moves-counter, main .game-active .status-section .time-section .progress-counter,
+main .game-active .status-section .moves-section .time-counter,
+main .game-active .status-section .moves-section .moves-counter,
+main .game-active .status-section .moves-section .progress-counter, main .game-active .status-section .progress-section .time-counter, main .game-active .status-section .progress-section .moves-counter, main .game-active .status-section .progress-section .progress-counter {
+  font-size: 2rem;
+}
+main .game-active .status-section .buttons-section {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 45%;
+}
+main .game-active .status-section .buttons-section .btn-pause, main .game-active .status-section .buttons-section .btn-quit {
+  padding: 1.4rem 2.8rem;
+  font-family: "Press Start 2P";
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: #fbcb0a;
+  text-shadow: 0.2rem 0.2rem 0.2rem red;
+  background-color: #c70a80;
+  border: none;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem red;
+          box-shadow: 0.2rem 0.2rem 0.2rem red;
+  cursor: pointer;
+  -webkit-transition: background-color 0.1s, -webkit-box-shadow 0.1s;
+  transition: background-color 0.1s, -webkit-box-shadow 0.1s;
+  transition: background-color 0.1s, box-shadow 0.1s;
+  transition: background-color 0.1s, box-shadow 0.1s, -webkit-box-shadow 0.1s;
+}
+main .game-active .status-section .buttons-section .btn-pause:hover, main .game-active .status-section .buttons-section .btn-quit:hover {
+  background-color: #eb0291;
+  -webkit-box-shadow: 0.4rem 0.4rem 0.4rem red;
+          box-shadow: 0.4rem 0.4rem 0.4rem red;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 5%;
+  background-color: #590696;
+}
+footer .footer-text {
+  text-align: center;
+  color: #37e2d5;
+  font-size: 1.5rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem red;
+}
+
+@media (max-width: 600px) {
+  main .game-active .status-section .time-section,
+main .game-active .status-section .moves-section,
+main .game-active .status-section .progress-section {
+    font-size: 1.5rem;
+  }
+  main .game-active .status-section .time-section .time-counter,
+main .game-active .status-section .time-section .moves-counter,
+main .game-active .status-section .time-section .progress-counter,
+main .game-active .status-section .moves-section .time-counter,
+main .game-active .status-section .moves-section .moves-counter,
+main .game-active .status-section .moves-section .progress-counter,
+main .game-active .status-section .progress-section .time-counter,
+main .game-active .status-section .progress-section .moves-counter,
+main .game-active .status-section .progress-section .progress-counter {
+    font-size: 2rem;
+  }
+  main .game-active .game-section .game-card {
+    width: 16%;
+  }
+  main .game-active .game-section .game-card .card-obverse i {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  header .title {
+    font-size: 3.4rem;
+  }
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 31.5rem;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 31.5rem;
+    }
+  }
+  main .starting-board .start-btn {
+    font-size: 3.4rem;
+  }
+  main .game-active .game-section .game-card {
+    height: 22%;
+    width: 10%;
+  }
+  footer .footer-text {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  header .title {
+    font-size: 3.9rem;
+  }
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 36.5rem;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 36.5rem;
+    }
+  }
+  main .starting-board .start-btn {
+    font-size: 3.9rem;
+  }
+  footer .footer-text {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=main.css.map */
