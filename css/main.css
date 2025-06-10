@@ -134,7 +134,7 @@ main .starting-board {
           align-items: center;
   width: 100%;
   height: 100%;
-  background-image: url("../img/Copilot_20250610_200014.png");
+  background-image: url("/../img/Copilot_20250610_200014.png");
   background-size: cover;
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
