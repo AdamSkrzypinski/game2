@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: "Press Start 2P";
+  background-color: #2d0549;
 }
 
 .wrapper {
@@ -133,7 +134,8 @@ main .starting-board {
           align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #8a06e9;
+  background-image: url("../img/Copilot_20250610_200014.png");
+  background-size: cover;
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
   -webkit-transition: -webkit-clip-path 1s steps(15, end);
@@ -488,19 +490,19 @@ footer .footer-text {
 
 @media (max-width: 600px) {
   main .game-active .status-section .time-section,
-main .game-active .status-section .moves-section,
-main .game-active .status-section .progress-section {
+  main .game-active .status-section .moves-section,
+  main .game-active .status-section .progress-section {
     font-size: 1.5rem;
   }
   main .game-active .status-section .time-section .time-counter,
-main .game-active .status-section .time-section .moves-counter,
-main .game-active .status-section .time-section .progress-counter,
-main .game-active .status-section .moves-section .time-counter,
-main .game-active .status-section .moves-section .moves-counter,
-main .game-active .status-section .moves-section .progress-counter,
-main .game-active .status-section .progress-section .time-counter,
-main .game-active .status-section .progress-section .moves-counter,
-main .game-active .status-section .progress-section .progress-counter {
+  main .game-active .status-section .time-section .moves-counter,
+  main .game-active .status-section .time-section .progress-counter,
+  main .game-active .status-section .moves-section .time-counter,
+  main .game-active .status-section .moves-section .moves-counter,
+  main .game-active .status-section .moves-section .progress-counter,
+  main .game-active .status-section .progress-section .time-counter,
+  main .game-active .status-section .progress-section .moves-counter,
+  main .game-active .status-section .progress-section .progress-counter {
     font-size: 2rem;
   }
   main .game-active .game-section .game-card {
