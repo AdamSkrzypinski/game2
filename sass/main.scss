@@ -202,7 +202,7 @@ main {
 			.card-reverse {
 				font-size: 7rem;
 				text-shadow: 0.1rem 0.1rem 0.1rem red;
-				box-shadow: 0.2rem 0.2rem 0.0rem red;
+				box-shadow: 0.4rem 0.4rem 0.0rem red;
 				border-radius: 1px;
 
 				z-index: 2;
@@ -215,8 +215,9 @@ main {
 
 			.card-obverse {
 				background-color: #fde893;
-				box-shadow: -0.2rem 0.2rem 0.0rem red;
-				border-radius: 1px;				opacity: 0;
+				box-shadow: -0.4rem 0.4rem 0.0rem red;
+				border-radius: 1px;				
+				opacity: 0;
 				
 				img {
 					width: 100%;
