@@ -155,13 +155,13 @@ main .starting-board .start-btn {
   text-shadow: 0.2rem 0.2rem 0.2rem red;
   background-color: #c70a80;
   border: none;
-  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem red;
-          box-shadow: 0.2rem 0.2rem 0.2rem red;
+  -webkit-box-shadow: 0.5rem 0.5rem 0rem red;
+          box-shadow: 0.5rem 0.5rem 0rem red;
   cursor: pointer;
-  -webkit-transition: background-color 0.1s, -webkit-box-shadow 0.1s;
-  transition: background-color 0.1s, -webkit-box-shadow 0.1s;
-  transition: background-color 0.1s, box-shadow 0.1s;
-  transition: background-color 0.1s, box-shadow 0.1s, -webkit-box-shadow 0.1s;
+  -webkit-transition: background-color 0s, -webkit-box-shadow 0s;
+  transition: background-color 0s, -webkit-box-shadow 0s;
+  transition: background-color 0s, box-shadow 0s;
+  transition: background-color 0s, box-shadow 0s, -webkit-box-shadow 0s;
 }
 main .starting-board .start-btn:hover {
   background-color: #eb0291;
@@ -237,8 +237,9 @@ main .game-active .game-section .card-obverse {
 main .game-active .game-section .card-reverse {
   font-size: 7rem;
   text-shadow: 0.1rem 0.1rem 0.1rem red;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem red;
-          box-shadow: 0.1rem 0.1rem 0.4rem red;
+  -webkit-box-shadow: 0.2rem 0.2rem 0rem red;
+          box-shadow: 0.2rem 0.2rem 0rem red;
+  border-radius: 1px;
   z-index: 2;
 }
 main .game-active .game-section .card-reverse img {
@@ -247,8 +248,9 @@ main .game-active .game-section .card-reverse img {
 }
 main .game-active .game-section .card-obverse {
   background-color: #fde893;
-  -webkit-box-shadow: -0.1rem 0.1rem 0.4rem red;
-          box-shadow: -0.1rem 0.1rem 0.4rem red;
+  -webkit-box-shadow: -0.2rem 0.2rem 0rem red;
+          box-shadow: -0.2rem 0.2rem 0rem red;
+  border-radius: 1px;
   opacity: 0;
 }
 main .game-active .game-section .card-obverse img {
@@ -341,13 +343,13 @@ main .game-active .game-section .game-pause .btn-resume, main .game-active .game
   text-shadow: 0.2rem 0.2rem 0.2rem red;
   background-color: #c70a80;
   border: none;
-  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem red;
-          box-shadow: 0.2rem 0.2rem 0.2rem red;
+  -webkit-box-shadow: 0.4rem 0.4rem 0rem red;
+          box-shadow: 0.4rem 0.4rem 0rem red;
   cursor: pointer;
-  -webkit-transition: background-color 0.1s, -webkit-box-shadow 0.1s;
-  transition: background-color 0.1s, -webkit-box-shadow 0.1s;
-  transition: background-color 0.1s, box-shadow 0.1s;
-  transition: background-color 0.1s, box-shadow 0.1s, -webkit-box-shadow 0.1s;
+  -webkit-transition: background-color 0s, -webkit-box-shadow 0s;
+  transition: background-color 0s, -webkit-box-shadow 0s;
+  transition: background-color 0s, box-shadow 0s;
+  transition: background-color 0s, box-shadow 0s, -webkit-box-shadow 0s;
 }
 main .game-active .game-section .game-pause .btn-resume:hover, main .game-active .game-section .game-pause .btn-yes:hover, main .game-active .game-section .game-pause .btn-no:hover, main .game-active .game-section .game-quit .btn-resume:hover, main .game-active .game-section .game-quit .btn-yes:hover, main .game-active .game-section .game-quit .btn-no:hover {
   background-color: #eb0291;
@@ -420,10 +422,10 @@ main .game-active .status-section .moves-section, main .game-active .status-sect
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   color: #37e2d5;
-  -webkit-box-shadow: 0.1rem 0.1rem 0.4rem red;
-          box-shadow: 0.1rem 0.1rem 0.4rem red;
+  -webkit-box-shadow: 0.2rem 0.2rem 0rem red;
+          box-shadow: 0.2rem 0.2rem 0rem red;
   text-shadow: 0.1rem 0.2rem 0.2rem red;
-  border-radius: 6px;
+  border-radius: 1px;
 }
 main .game-active .status-section .time-section .time,
 main .game-active .status-section .time-section .moves, main .game-active .status-section .time-section .progress,
@@ -456,13 +458,13 @@ main .game-active .status-section .buttons-section .btn-pause, main .game-active
   text-shadow: 0.2rem 0.2rem 0.2rem red;
   background-color: #c70a80;
   border: none;
-  -webkit-box-shadow: 0.2rem 0.2rem 0.2rem red;
-          box-shadow: 0.2rem 0.2rem 0.2rem red;
+  -webkit-box-shadow: 0.4rem 0.4rem 0rem red;
+          box-shadow: 0.4rem 0.4rem 0rem red;
   cursor: pointer;
-  -webkit-transition: background-color 0.1s, -webkit-box-shadow 0.1s;
-  transition: background-color 0.1s, -webkit-box-shadow 0.1s;
-  transition: background-color 0.1s, box-shadow 0.1s;
-  transition: background-color 0.1s, box-shadow 0.1s, -webkit-box-shadow 0.1s;
+  -webkit-transition: background-color 0s, -webkit-box-shadow 0s;
+  transition: background-color 0s, -webkit-box-shadow 0s;
+  transition: background-color 0s, box-shadow 0s;
+  transition: background-color 0s, box-shadow 0s, -webkit-box-shadow 0s;
 }
 main .game-active .status-section .buttons-section .btn-pause:hover, main .game-active .status-section .buttons-section .btn-quit:hover {
   background-color: #eb0291;

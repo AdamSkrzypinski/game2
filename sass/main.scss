@@ -127,9 +127,9 @@ main {
 			text-shadow: 0.2rem 0.2rem 0.2rem red;
 			background-color: $button--bgc-color;
 			border: none;
-			box-shadow: 0.2rem 0.2rem 0.2rem red;
+			box-shadow: 0.5rem 0.5rem 0.0rem red;
 			cursor: pointer;
-			transition: background-color 0.1s, box-shadow 0.1s;
+			transition: background-color 0.0s, box-shadow 0.0s;
 
 			&:hover {
 				background-color: #eb0291;
@@ -185,7 +185,9 @@ main {
 			.card-reverse {
 				font-size: 7rem;
 				text-shadow: 0.1rem 0.1rem 0.1rem red;
-				box-shadow: 0.1rem 0.1rem 0.4rem red;
+				box-shadow: 0.2rem 0.2rem 0.0rem red;
+				border-radius: 1px;
+
 				z-index: 2;
 				img {
 					width: 100%;
@@ -196,8 +198,8 @@ main {
 
 			.card-obverse {
 				background-color: #fde893;
-				box-shadow: -0.1rem 0.1rem 0.4rem red;
-				opacity: 0;
+				box-shadow: -0.2rem 0.2rem 0.0rem red;
+				border-radius: 1px;				opacity: 0;
 				
 				img {
 					width: 100%;
@@ -268,9 +270,9 @@ main {
 					text-shadow: 0.2rem 0.2rem 0.2rem red;
 					background-color: $button--bgc-color;
 					border: none;
-					box-shadow: 0.2rem 0.2rem 0.2rem red;
+					box-shadow: 0.4rem 0.4rem 0.0rem red;
 					cursor: pointer;
-					transition: background-color 0.1s, box-shadow 0.1s;
+					transition: background-color 0.0s, box-shadow 0.0s;
 		
 					&:hover {
 						background-color: #eb0291;
@@ -333,9 +335,9 @@ main {
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
 				color: $text-color;
-				box-shadow: 0.1rem 0.1rem 0.4rem red;
+				box-shadow: 0.2rem 0.2rem 0.0rem red;
 				text-shadow: 0.1rem 0.2rem 0.2rem red;
-				border-radius: 6px;
+				border-radius: 1px;
 
 				.time,
 				.moves, .progress {
@@ -362,9 +364,9 @@ main {
 					text-shadow: 0.2rem 0.2rem 0.2rem red;
 					background-color: $button--bgc-color;
 					border: none;
-					box-shadow: 0.2rem 0.2rem 0.2rem red;
+					box-shadow: 0.4rem 0.4rem 0.0rem red;
 					cursor: pointer;
-					transition: background-color 0.1s, box-shadow 0.1s;
+					transition: background-color 0.0s, box-shadow 0.0s;
 		
 					&:hover {
 						background-color: #eb0291;
