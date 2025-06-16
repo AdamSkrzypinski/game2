@@ -193,4 +193,9 @@ const gameQuitAcept = () => {
   window.location.reload();
 };
 
-document.addEventListener('DOMContentLoaded', main);
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelector('.loading-screen').style.display = 'none';
+    main();
+  }, 2000);
+});
